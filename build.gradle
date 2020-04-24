@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+		jcenter()
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+		maven { 
+			name = "Jitpack"
+			url 'https://jitpack.io/'
+		}
+	}
+	dependencies {
+        classpath 'com.github.Chocohead:Fabric-Loom:96d71dd'
+	}
+}
+
+apply plugin: "fabric-loom"
+
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+archivesBaseName = project.archives_base_name
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+	maven { 
+		name = "Jitpack"
+		url "https://jitpack.io/"
+	}
+}
+
+minecraft {
+}
+
+dependencies {
+	//to change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+	/*mappings loom.fromBranch("Blayyke/yarn", "1.2.5") {spec ->
+		spec.version = "1.2.5-1" //TODO: Make this work
+	}*/
+	mappings files("MCPYarn-1.2.5-1.jar")
+
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include "fabric.mod.json"
+		expand "version": project.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude "fabric.mod.json"
+	}
+}
+
+// ensure that the encoding is set to UTF-8, no matter what the system default is
+// this fixes some edge cases with special characters not displaying correctly
+// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
+// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+// if it is present.
+// If you remove this task, sources will not be generated.
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = "sources"
+	from sourceSets.main.allSource
+}
