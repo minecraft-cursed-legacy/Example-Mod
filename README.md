@@ -12,15 +12,11 @@ The (unofficial) [Fabric](https://fabricmc.net/) home for 1.2.5 and Beta 1.7.3 -
 ./gradlew eclipse
 ```
 
-### Words of Warning
-Building your mod would typically be done with the following command:
+Once your mod is complete and ready for use it can be compiled and reobfuscated with:
 
 ```
 ./gradlew build
 ```
-
-Currently this is not working however, so you'll have to work on adding more quirks and features to your mod in dev until it is.
-
 
 ## License
 This template is available under the MIT license. Feel free to learn from it and incorporate it in your own projects.
