@@ -39,7 +39,7 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-	mappings files("MCPYarn-b1.7.3-1.jar")
+	mappings files("MCPOMF-b1.7.3-1.jar")
 
 	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
 }
