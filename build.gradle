@@ -39,10 +39,7 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-	/*mappings loom.fromBranch("Blayyke/yarn", "1.2.5") {spec ->
-		spec.version = "1.2.5-1" //TODO: Make this work
-	}*/
-	mappings files("MCPYarn-1.2.5-1.jar")
+	mappings files("MCPYarn-b1.7.3-1.jar")
 
 	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
 }
