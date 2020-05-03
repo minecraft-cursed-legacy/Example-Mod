@@ -11,12 +11,11 @@ buildscript {
 		}
 	}
 	dependencies {
-        classpath 'com.github.Chocohead:Fabric-Loom:173cd0e'
+        classpath 'com.github.Chocohead:Fabric-Loom:6ebda4d'
 	}
 }
 
 apply plugin: "fabric-loom"
-
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8

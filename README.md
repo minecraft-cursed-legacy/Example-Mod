@@ -12,6 +12,12 @@ The (unofficial) [Fabric](https://fabricmc.net/) home for 1.2.5 and Beta 1.7.3 -
 ./gradlew eclipse
 ```
 
+NOTE: if you want sources (recommended), instead run
+
+```
+./gradlew rebuildLVT genSources eclipse
+```
+
 Once your mod is complete and ready for use it can be compiled and reobfuscated with:
 
 ```
