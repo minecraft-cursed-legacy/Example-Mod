@@ -1,13 +1,14 @@
-package net.fabricmc.example.mixin;
+package tk.valoeghese.example.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.screen.MainMenuScreen;
 
-@Mixin(MainMenuScreen.class)
+@Mixin(TitleScreen.class)
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {

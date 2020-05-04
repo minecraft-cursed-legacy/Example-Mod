@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package tk.valoeghese.example;
 
 import net.fabricmc.api.ModInitializer;
 
