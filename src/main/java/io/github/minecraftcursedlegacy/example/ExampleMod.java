@@ -1,4 +1,4 @@
-package tk.valoeghese.example;
+package io.github.minecraftcursedlegacy.example;
 
 import net.fabricmc.api.ModInitializer;
 

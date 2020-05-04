@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "tk.valoeghese.example.ExampleMod"
+      "io.github.minecraftcursedlegacy.example.ExampleMod"
     ]
   },
   "mixins": [

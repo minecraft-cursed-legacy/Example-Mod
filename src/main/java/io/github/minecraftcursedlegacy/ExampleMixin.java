@@ -1,4 +1,4 @@
-package tk.valoeghese.example.mixin;
+package io.github.minecraftcursedlegacy;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
