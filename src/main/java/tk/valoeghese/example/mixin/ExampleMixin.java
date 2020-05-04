@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.gui.screen.TitleScreen;
-import net.minecraft.client.screen.MainMenuScreen;
 
 @Mixin(TitleScreen.class)
 public class ExampleMixin {
