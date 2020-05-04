@@ -52,7 +52,7 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-	mappings files("MCPOMF-b1.7.3-3.jar")
+	mappings files("mcpomf-b1.7.3+build.4.jar")
 
 	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
 }
