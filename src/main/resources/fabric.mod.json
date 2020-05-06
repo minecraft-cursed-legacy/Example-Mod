@@ -18,7 +18,7 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "init": [
       "io.github.minecraftcursedlegacy.example.ExampleMod"
     ]
   },
