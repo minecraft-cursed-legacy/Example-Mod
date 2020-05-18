@@ -1,4 +1,4 @@
-# Minecraft Cursed POMF Example Mod
+# Minecraft Cursed Legacy Example Mod
 
 The (unofficial) [Fabric](https://fabricmc.net/) home for 1.2.5 and Beta 1.7.3 - if you want the newer versions see [here](https://github.com/FabricMC/fabric-example-mod).
 
