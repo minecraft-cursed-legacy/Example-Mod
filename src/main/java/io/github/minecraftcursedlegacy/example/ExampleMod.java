@@ -20,8 +20,8 @@ public class ExampleMod implements ModInitializer {
 		// example config
 		try {
 			config = Configs.loadOrCreate(new Id("modid", "example"),
-					ConfigTemplate.builder().addContainer("exampleContainer", e -> e
-							.addDataEntry("someData", "0.5"))
+					ConfigTemplate.builder()
+					.addContainer("exampleContainer", container -> container.addDataEntry("someData", "0.5"))
 					.build());
 		} catch (IOException e) {
 			throw new RuntimeException(e);
