@@ -52,8 +52,8 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-	mappings loom.fromCommit("minecraft-cursed-legacy/Plasma", "6afd344") {spec ->
-		spec.version = "b1.7.3-11"
+	mappings loom.fromCommit("minecraft-cursed-legacy/Plasma", "b464f27") {spec ->
+		spec.version = "b1.7.3-12"
 	}
 
 	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
