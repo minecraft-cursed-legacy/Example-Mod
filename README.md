@@ -6,7 +6,7 @@ The (unofficial) [Fabric](https://fabricmc.net/) home for 1.2.5 and Beta 1.7.3 -
 1. Edit build.gradle and mod.json to suit your needs.
     * The "mixins" object can be removed from mod.json if you do not need to use mixins.
     * Please remember to replace all occurrences of "modid" with your own mod ID.
-2. Run the following command:
+2. Run the following command, replacing "eclipse" with the command your specific ide if you are not using eclipse:
 
 ```
 ./gradlew eclipse
