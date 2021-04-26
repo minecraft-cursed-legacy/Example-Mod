@@ -1,22 +1,21 @@
 buildscript {
-    repositories {
-    	mavenCentral()
-		jcenter()
-        maven {
-            name = "Fabric"
-            url = "https://maven.fabricmc.net/"
-        }
+	repositories {
+		mavenCentral()
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
 		maven { 
-			name = "Jitpack"
+			name = 'Jitpack'
 			url 'https://jitpack.io/'
 		}
 	}
 	dependencies {
-        classpath 'com.github.Chocohead:Fabric-Loom:7425f5a'
+		classpath 'com.github.Chocohead:Fabric-Loom:d823377'
 	}
 }
 
-apply plugin: "fabric-loom"
+apply plugin: 'fabric-loom'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -27,51 +26,46 @@ group = project.maven_group
 
 repositories {
 	maven { 
-		name = "Jitpack"
-		url "https://jitpack.io/"
+		name = 'Jitpack'
+		url 'https://jitpack.io/'
 	}
 }
 
 minecraft {
+	//Skip old versions of libraries which Mojang use but we don't need
+	addLibraryFilter {library ->
+		return !(library.startsWith('net.minecraft:launchwrapper:') ||
+					library.startsWith('net.sf.jopt-simple:jopt-simple:') ||
+					library.startsWith('org.ow2.asm:asm-all:'))
+	}
 }
 
 dependencies {
-    // fabric loader requires log4j, guava, and gson
-	implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.8.1'
-	implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.1'
-	implementation 'com.google.guava:guava:28.0-jre'
-	implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
-
-	// mixin and fabric loader need asm 8
-	implementation 'org.ow2.asm:asm:8.0'
-	implementation 'org.ow2.asm:asm-analysis:8.0'
-	implementation 'org.ow2.asm:asm-commons:8.0'
-	implementation 'org.ow2.asm:asm-tree:8.0'
-	implementation 'org.ow2.asm:asm-util:8.0'
-
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-	mappings loom.fromCommit("minecraft-cursed-legacy/Plasma", "e84b183") {spec ->
-		spec.version = "b1.7.3-17"
+	mappings loom.fromCommit('minecraft-cursed-legacy/Plasma', 'e84b183') {spec ->
+		spec.version = 'b1.7.3-17'
 	}
 
-	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
+	modImplementation("com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}") {
+		transitive false
+	}
 
 	// API. You technically don't need it, but it's extremely useful for not having to write the same code in every mod.
 	modImplementation "com.github.minecraft-cursed-legacy:Cursed-Legacy-API:${project.api_version}"
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property 'version', project.version
 
 	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
-		expand "version": project.version
+		include 'fabric.mod.json'
+		expand 'version': project.version
 	}
 
 	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
+		exclude 'fabric.mod.json'
 	}
 }
 
@@ -79,13 +73,13 @@ processResources {
 // this fixes some edge cases with special characters not displaying correctly
 // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile) {
-	options.encoding = "UTF-8"
+	options.encoding = 'UTF-8'
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 // if it is present.
 // If you remove this task, sources will not be generated.
 task sourcesJar(type: Jar, dependsOn: classes) {
-	classifier = "sources"
+	classifier = 'sources'
 	from sourceSets.main.allSource
 }
