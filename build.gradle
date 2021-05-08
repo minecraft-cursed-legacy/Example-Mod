@@ -59,7 +59,7 @@ dependencies {
 	}
 
 	// API. You technically don't need it, but it's extremely useful for not having to write the same code in every mod.
-	modImplementation "com.github.minecraft-cursed-legacy:Cursed-Legacy-API:${project.api_version}"
+	modImplementation "io.github.minecraft-cursed-legacy:cursed-legacy-api:${project.api_version}"
 }
 
 processResources {
