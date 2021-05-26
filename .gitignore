@@ -1,7 +1,12 @@
 #Gradle
-.gradle
-build
-
+.gradle/
+build/
+out/
+# Idea
+.idea/
+*.iml
+*.ipr
+*.iws
 #Eclipse
 .settings
 .project
