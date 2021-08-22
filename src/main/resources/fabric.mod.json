@@ -27,10 +27,10 @@
   ],
 
   "depends": {
-    "fabricloader": "*",
-    "minecraft": "1.0.0-beta.7.3"
+    "minecraft": "1.0.0-beta.7.3",
+    "api": "*"
   },
   "suggests": {
-    "flamingo": "*"
+    "another-mod": "*"
   }
 }
